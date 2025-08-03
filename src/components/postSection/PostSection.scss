@@ -1,9 +1,8 @@
 .post {
   width: 100%;
-  max-width: 360px;
   margin: 0 auto;
   padding: 90px 0 100px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   text-align: center;
 
   &__title {
@@ -16,9 +15,15 @@
   }
 
   &__form {
+    max-width: 328px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    @media (min-width: 768px) {
+      margin: 0 auto;
+      max-width: 380px;
+    }
   }
 
   &__inputs {

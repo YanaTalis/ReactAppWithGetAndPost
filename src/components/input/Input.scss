@@ -32,6 +32,18 @@
     margin-left: 16px;
     color: #7e7e7e;
 
+    // tablet
+    @media (min-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    // laptop
+    @media (min-width: 1024px) {
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+
     &--error {
       color: #cb3d40;
     }

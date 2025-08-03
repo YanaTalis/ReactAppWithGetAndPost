@@ -4,21 +4,21 @@ import Button from '../button/Button'
 import './GetSection.scss'
 
 // Import images for workers photos
-import photoSalvador from './../../img/Salvador.jpeg'
-import photoTakamaru from './../../img/Takamaru.jpeg'
-import photoAlexandre from './../../img/Alexandre.jpeg'
-import photoIlya from './../../img/Ilya.jpeg'
-import photoWinny from './../../img/Winny.jpeg'
-import photoSimon from './../../img/Simon.jpeg'
+import photoSalvador from '/src/img/Salvador.jpg'
+import photoTakamaru from '/src/img/Takamaru.jpg'
+import photoAlexandre from '/src/img/Alexandre.jpg'
+import photoIlya from '/src/img/Ilya.jpg'
+import photoWinny from '/src/img/Winny.jpg'
+import photoSimon from '/src/img/Simon.jpg'
 
 // Array with workers data (mock data)
 const workers = [
   {
     id: 1,
     photo: photoSalvador,
-    name: 'Salvador Stewart Flynn Thomas Salva...',
-    position: 'Leading specialist of the department o...',
-    email: 'JeromeKlarkaJeromeKlarka19233623...',
+    name: 'Salvador Stewart Flynn Thomas Salva Salve...',
+    position: 'Leading specialist of the department of cent...',
+    email: 'JeromeKlarkaJeromeKlarka1923362362...',
     phone: '+38 (098) 278 76 24',
   },
   {
@@ -113,7 +113,7 @@ const workers = [
 
 // GetSection component
 function GetSection() {
-  // how many cards to show 
+  // how many cards to show
   const [visibleCount, setVisibleCount] = useState(6)
 
   // how many more cards to show when "Show more" is clicked

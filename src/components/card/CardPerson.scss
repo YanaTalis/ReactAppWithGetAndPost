@@ -9,6 +9,22 @@
   padding: 20px;
   width: 328px;
 
+  // tablet
+  @media (min-width: 768px) {
+    width: 344px;
+    height: 254px;
+  }
+
+  // laptop
+  @media (min-width: 1024px) {
+    width: 282px;
+  }
+
+  // computer
+  @media (min-width: 2560px) {
+    width: 370px;
+  }
+
   &__photo {
     width: 70px;
     height: 70px;
@@ -34,5 +50,9 @@
     line-height: 26px;
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.87);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
   }
 }

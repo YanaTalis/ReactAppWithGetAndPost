@@ -5,17 +5,13 @@ import GetSection from './components/getSection/GetSection.jsx'
 import PostSection from './components/postSection/PostSection.jsx'
 
 const App = () => {
-  // Создаём ref для передачи в PostSection и прокрутки к нему из Header
+  // create ref for  PostSection and go to it from Header
   const postSectionRef = useRef(null)
   return (
     <div>
-      {/* Шапка сайта, передаём ref для прокрутки */}
       <Header postSectionRef={postSectionRef} />
-      {/* Главный баннер */}
       <HeroSection postSectionRef={postSectionRef}/>
-      {/* Секция с пользователями */}
       <GetSection />
-      {/* Секция с формой регистрации, прокрутка по ref */}
       <PostSection ref={postSectionRef} />
     </div>
   )
