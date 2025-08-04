@@ -1,5 +1,6 @@
 import React from 'react'
-import './RadioButton.scss'
+import { cx } from '../../utils/classNames'
+import styles from './RadioButton.module.scss'
 
 // radio component
 function RadioButton({
@@ -11,9 +12,7 @@ function RadioButton({
   className = '',
 }) {
   return (
-    // wrapper for the radio button
-    <label className={`radio ${className}`}>
-      {/* input element */}
+    <label className={cx(styles.radio, className)}>
       <input
         type="radio"
         name={name}
@@ -21,10 +20,8 @@ function RadioButton({
         checked={checked}
         onChange={onChange}
       />
-      {/* Custom radio button look */}
-      <span className="radio__custom"></span>
-      {/* Label for the radio button */}
-      <span className="radio__label">{children}</span>
+      <span className={styles['radio__custom']}></span>
+      <span className={styles['radio__label']}>{children}</span>
     </label>
   )
 }

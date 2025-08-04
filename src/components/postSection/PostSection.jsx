@@ -3,7 +3,8 @@ import Button from '../button/Button'
 import Input from '../input/Input'
 import RadioButton from '../radio/RadioButton'
 import FileUpload from '../uploadPhoto/FileUpload'
-import './PostSection.scss'
+import { cx } from '../../utils/classNames'
+import styles from './PostSection.module.scss'
 
 // postSection component
 const PostSection = forwardRef((props, ref) => {
@@ -43,15 +44,12 @@ const PostSection = forwardRef((props, ref) => {
   ]
 
   return (
-    <section className="post" ref={ref}>
+    <section className={styles.post} ref={ref}>
       <div className="container">
-        {/* title*/}
-        <h2 className="post__title">Working with POST request</h2>
+        <h2 className={styles['post__title']}>Working with POST request</h2>
 
-        {/* Форма регистрации */}
-        <form className="post__form" onSubmit={handleSubmit}>
-          <div className="post__inputs">
-            {/* name */}
+        <form className={styles['post__form']} onSubmit={handleSubmit}>
+          <div className={styles['post__inputs']}>
             <Input
               name="name"
               placeholder="Your name"
@@ -59,7 +57,6 @@ const PostSection = forwardRef((props, ref) => {
               onChange={handleChange}
             />
 
-            {/* email */}
             <Input
               type="email"
               name="email"
@@ -68,7 +65,6 @@ const PostSection = forwardRef((props, ref) => {
               onChange={handleChange}
             />
 
-            {/* phone */}
             <Input
               type="tel"
               name="phone"
@@ -79,10 +75,9 @@ const PostSection = forwardRef((props, ref) => {
             />
           </div>
 
-          {/* Radio buttons for position selection */}
-          <div className="post__position">
-            <p className="post__label">Select your position</p>
-            <div className="post__radio-group">
+          <div className={styles['post__position']}>
+            <p className={styles['post__label']}>Select your position</p>
+            <div className={styles['post__radio-group']}>
               {positions.map((pos) => (
                 <RadioButton
                   key={pos}
@@ -97,14 +92,12 @@ const PostSection = forwardRef((props, ref) => {
             </div>
           </div>
 
-          {/* Upload photo */}
           <FileUpload onChange={handleFileChange} file={formData.photo} />
 
-          {/* Button for form submission, blocked if not all fields are filled */}
           <Button
             variant="primary"
             type="submit"
-            className="post__submit"
+            className={styles['post__submit']}
             disabled={
               !formData.name ||
               !formData.email ||

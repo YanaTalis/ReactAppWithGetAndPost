@@ -1,7 +1,7 @@
 import React from 'react'
-import './button.scss'
+import { cx } from '../../utils/classNames'
+import styles from './Button.module.scss'
 
-// MultiPurpose button
 function Button({
   children,
   variant = 'primary',
@@ -9,11 +9,12 @@ function Button({
   className,
   ...props
 }) {
-  // formats the button class
-  const buttonClasses = `btn btn--${variant}${className ? ` ${className}` : ''}`
-
   return (
-    <button className={buttonClasses} onClick={onClick} {...props}>
+    <button
+      className={cx(styles.btn, styles[`btn--${variant}`], className)}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </button>
   )

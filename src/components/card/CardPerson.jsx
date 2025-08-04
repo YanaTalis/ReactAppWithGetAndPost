@@ -1,19 +1,17 @@
 import React from 'react'
-import './CardPerson.scss'
+import { cx } from '../../utils/classNames'
+import styles from './CardPerson.module.scss'
 
 // cards for people in the team
 function CardPerson({ photo, name, position, email, phone }) {
   return (
-    <div className="person-card">
-      {/* foto */}
-      <img className="person-card__photo" src={photo} alt={name} />
-      {/* name */}
-      <p className="person-card__name">{name}</p>
-      {/* description (position, email, phone) */}
-      <div className="person-card__description">
-        <p className="person-card__position">{position}</p>
-        <p className="person-card__email">{email}</p>
-        <p className="person-card__phone">{phone}</p>
+    <div className={styles['person-card']}>
+      <img className={styles['person-card__photo']} src={photo} alt={name} />
+      <p className={styles['person-card__name']}>{name}</p>
+      <div className={styles['person-card__description']}>
+        <p className={styles['person-card__position']}>{position}</p>
+        <p className={styles['person-card__email']}>{email}</p>
+        <p className={styles['person-card__phone']}>{phone}</p>
       </div>
     </div>
   )

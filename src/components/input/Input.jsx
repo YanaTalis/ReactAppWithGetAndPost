@@ -1,5 +1,6 @@
 import React from 'react'
-import './Input.scss'
+import { cx } from '../../utils/classNames'
+import styles from './Input.module.scss'
 
 // input component with standard props
 function Input({
@@ -14,10 +15,11 @@ function Input({
   ...props
 }) {
   return (
-    <div className={`input ${className}`}>
-      {/* Input field */}
+    <div className={cx(styles.input, className)}>
       <input
-        className={`input__field ${error ? 'input__field--error' : ''}`}
+        className={cx(styles['input__field'], {
+          [styles['input__field--error']]: error,
+        })}
         type={type}
         name={name}
         placeholder={placeholder}
@@ -25,12 +27,11 @@ function Input({
         onChange={onChange}
         {...props}
       />
-      {/* helper text */}
       {helperText && (
         <p
-          className={`input__helper-text ${
-            error ? 'input__helper-text--error' : ''
-          }`}
+          className={cx(styles['input__helper-text'], {
+            [styles['input__helper-text--error']]: error,
+          })}
         >
           {helperText}
         </p>

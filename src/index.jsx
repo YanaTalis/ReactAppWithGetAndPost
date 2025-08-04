@@ -4,13 +4,13 @@ import App from './App'
 import './styles/reset.scss'
 import './styles/main.scss'
 
-// При перезагрузке страницы прокручиваем наверх
+// if update the scroll position on page reload, it will be reset to the top
 if (typeof window !== 'undefined') {
   window.onbeforeunload = function () {
     window.scrollTo(0, 0)
   }
 }
 
-// Находим корневой элемент и рендерим приложение
+// Find the root element and render the application
 const root = createRoot(document.getElementById('root'))
 root.render(<App />)

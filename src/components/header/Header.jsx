@@ -1,7 +1,10 @@
 import React from 'react'
-import logoImg from '/src/img/logo.svg'
+import logoImg from '../../img/logo.svg'
 import Button from '../button/Button'
-import './header.scss'
+import { cx } from '../../utils/classNames'
+import styles from './Header.module.scss'
+
+console.log('Header styles:', styles)
 
 // Header's component
 function Header({ postSectionRef }) {
@@ -18,18 +21,14 @@ function Header({ postSectionRef }) {
   }
 
   return (
-    <header className="header">
-      {/* logo & buttons */}
+    <header className={styles.header}>
       <div className="container">
-        <div className="header__row">
-          {/* logo */}
-          <div className="header__logo">
+        <div className={styles['header__row']}>
+          <div className={styles['header__logo']}>
             <img src={logoImg} alt="logoAbz" />
-            <span>testtask</span>
           </div>
-          {/* buttons */}
-          <nav className="header__nav">
-            <ul className="nav-list">
+          <nav className={styles['header__nav']}>
+            <ul className={styles['nav-list']}>
               <li>
                 <Button variant="primary" onClick={handleUsersClick}>
                   Users

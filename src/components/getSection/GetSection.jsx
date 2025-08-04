@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import CardPerson from './../card/CardPerson'
 import Button from '../button/Button'
-import './GetSection.scss'
+import { cx } from '../../utils/classNames'
+import styles from './GetSection.module.scss'
 
 // Import images for workers photos
-import photoSalvador from '/src/img/Salvador.jpg'
-import photoTakamaru from '/src/img/Takamaru.jpg'
-import photoAlexandre from '/src/img/Alexandre.jpg'
-import photoIlya from '/src/img/Ilya.jpg'
-import photoWinny from '/src/img/Winny.jpg'
-import photoSimon from '/src/img/Simon.jpg'
+import photoSalvador from '../../img/Salvador.jpg'
+import photoTakamaru from '../../img/Takamaru.jpg'
+import photoAlexandre from '../../img/Alexandre.jpg'
+import photoIlya from '../../img/Ilya.jpg'
+import photoWinny from '../../img/Winny.jpg'
+import photoSimon from '../../img/Simon.jpg'
 
 // Array with workers data (mock data)
 const workers = [
@@ -122,13 +123,11 @@ function GetSection() {
   }
 
   return (
-    <section className="get">
+    <section className={styles.get}>
       <div className="container">
-        {/* title */}
-        <h2 className="get__title">Working with GET request</h2>
+        <h2 className={styles['get__title']}>Working with GET request</h2>
 
-        {/* List of workers cards */}
-        <div className="get__list">
+        <div className={styles['get__list']}>
           {workers.slice(0, visibleCount).map((worker) => (
             <CardPerson
               key={worker.id}
@@ -141,13 +140,12 @@ function GetSection() {
           ))}
         </div>
 
-        {/* if there are more workers to show */}
         {visibleCount < workers.length && (
-          <div className="get__button-wrapper">
+          <div className={styles['get__button-wrapper']}>
             <Button
               variant="primary"
               onClick={handleShowMore}
-              className="get__show-more-btn"
+              className={styles['get__show-more-btn']}
             >
               Show more
             </Button>

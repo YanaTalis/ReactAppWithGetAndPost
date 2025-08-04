@@ -1,5 +1,6 @@
 import React from 'react'
-import './FileUpload.scss'
+import { cx } from '../../utils/classNames'
+import styles from './FileUpload.module.scss'
 
 // component for file upload
 function FileUpload({
@@ -12,30 +13,27 @@ function FileUpload({
   placeholder = 'Upload your photo',
 }) {
   return (
-    <div className={`file-upload__container ${className}`}>
+    <div className={cx(styles['file-upload__container'], className)}>
       <div
-        className={`file-upload__wrapper ${
-          error ? 'file-upload__wrapper--error' : ''
-        }`}
+        className={cx(styles['file-upload__wrapper'], {
+          [styles['file-upload__wrapper--error']]: error,
+        })}
       >
-        {/* Button and input for file selection */}
-        <label className="file-upload__label">
-          <span className="file-upload__button">Upload</span>
+        <label className={styles['file-upload__label']}>
+          <span className={styles['file-upload__button']}>Upload</span>
           <input
-            className="file-upload__input"
+            className={styles['file-upload__input']}
             type="file"
             accept={accept}
             onChange={onChange}
           />
         </label>
-        {/* Name of the selected file or placeholder */}
-        <span className="file-upload__name">
+        <span className={styles['file-upload__name']}>
           {file ? file.name : placeholder}
         </span>
       </div>
-      {/* Error text if any */}
       {error && errorText && (
-        <p className="file-upload__error-text">{errorText}</p>
+        <p className={styles['file-upload__error-text']}>{errorText}</p>
       )}
     </div>
   )
