@@ -12,15 +12,18 @@
     overflow: hidden;
 
     &--error {
-      border: 1px solid #cb3d40;
       .file-upload__button {
-        border-color: #cb3d40;
-        color: #cb3d40;
+        border: #cb3d40 2px solid;
       }
       .file-upload__name {
-        border-color: #cb3d40;
-        color: #cb3d40;
+        border: #cb3d40 2px solid;
+        border-left: none;
       }
+    }
+
+    &--disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
     }
   }
 

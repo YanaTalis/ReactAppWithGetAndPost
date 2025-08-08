@@ -4,8 +4,6 @@ import Button from '../button/Button'
 import { cx } from '../../utils/classNames'
 import styles from './Header.module.scss'
 
-console.log('Header styles:', styles)
-
 // Header's component
 function Header({ postSectionRef }) {
   // Function, that works when we clic on btn Users

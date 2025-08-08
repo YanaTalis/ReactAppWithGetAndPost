@@ -9,8 +9,9 @@ function Input({
   placeholder,
   value,
   onChange,
+  onBlur,
   helperText,
-  error = false,
+  error,
   className = '',
   ...props
 }) {
@@ -18,22 +19,24 @@ function Input({
     <div className={cx(styles.input, className)}>
       <input
         className={cx(styles['input__field'], {
-          [styles['input__field--error']]: error,
+          [styles['input__field--error']]:
+            error && styles['input__field--error'],
         })}
         type={type}
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         {...props}
       />
-      {helperText && (
+      {(helperText || error) && (
         <p
           className={cx(styles['input__helper-text'], {
             [styles['input__helper-text--error']]: error,
           })}
         >
-          {helperText}
+          {error || helperText}
         </p>
       )}
     </div>
